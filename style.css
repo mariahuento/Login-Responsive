@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,800;1,200&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+/* Variables de colores */
+/* los dos guiones son solo para ponerle un nombre a la variable*/
+:root {
+    --dark-bg: #390099;
+    --red-bg: #ff0054;
+    --btn-color: #202157;
+    --btn-hover: #101134; 
+}
+
+body {
+    background-color: var(--dark-bg);
+    color: white
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login_container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    width: 75%;
+    gap: 10px
+}
+
+form input {
+    height: 40px;
+    border: none;
+    border-radius: 20px;
+    padding: 0 20px; /* para separar el texto del borde*/
+}
+
+input:focus {
+    outline: none; /* para que no aparesca una linea negra cuando escribo sobre el input*/
+}
+
+.btn {
+    background-color: var(--btn-color);
+    color: white;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: var(--btn-hover) ;
+}
+
+.login-img {
+    display: none; /*para que no se muestre en la version mobile*/
+}
+
+/* MEDIA QUERIES */
+
+@media (min-width: 1000px) /* cuando la pagina llegue a 1000px empieza a aplicar los cambios */ {
+    .login_container {
+        background-color:var(--red-bg);
+        max-width: 650px; /*para delimitar el ancho en la pantalla*/
+        width: 100%; /*para que se muestre todo el contenido en el ancho que delimitamos*/
+        max-height: 300px;
+        height: 60%;
+        border-radius: 20px;
+        box-shadow: 0 0 26px rgba(0, 0, 0, 0.6);
+    }
+
+    .login-img {
+        display: block; /*para que se muestre la img*/
+        height: 100%;
+        width: 100%;
+        background: url("./img/img.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        border-radius: 0 0 20px 0;
+    }
+
+    form {
+        width: 100%;
+        height: 100%;
+        /* no aplicamos display flex porque ya se aplico en la version mobile*/
+        justify-content: center;
+        padding: 20px 60px;
+    }
+  }
